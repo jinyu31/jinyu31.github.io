@@ -6,15 +6,15 @@
   
   <title>linux基础命令 | 小金-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="ls pwdpwd 12ls">
+  <meta name="description" content="显示当前使用的shell  1echo $&amp;#123;SHELL&amp;#125;   显示当前系统使用的所有shell  1cat &#x2F;etc&#x2F;shells   设置主机名  12hostname NAMEhostnamectl set-hostname NAME   命令提示符  1PS1&#x3D;&amp;#x27;\e[1;31m[\u@\h \W]\$\e[0m&amp;#x27;   区分命令是内部命令还是外部命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux基础命令">
 <meta property="og:url" content="http://example.com/2023/09/15/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="小金-blog">
-<meta property="og:description" content="ls pwdpwd 12ls">
+<meta property="og:description" content="显示当前使用的shell  1echo $&amp;#123;SHELL&amp;#125;   显示当前系统使用的所有shell  1cat &#x2F;etc&#x2F;shells   设置主机名  12hostname NAMEhostnamectl set-hostname NAME   命令提示符  1PS1&#x3D;&amp;#x27;\e[1;31m[\u@\h \W]\$\e[0m&amp;#x27;   区分命令是内部命令还是外部命令">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-15T08:31:38.000Z">
-<meta property="article:modified_time" content="2023-09-15T08:32:13.522Z">
+<meta property="article:modified_time" content="2023-09-15T09:15:46.392Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -97,15 +97,118 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>ls</p>
-<p>pwdpwd</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <ul>
+<li>显示当前使用的shell</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;SHELL&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示当前系统使用的所有shell</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/shells</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置主机名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostname NAME</span><br><span class="line">hostnamectl set-hostname NAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令提示符</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS1=<span class="string">&#x27;\e[1;31m[\u@\h \W]\$\e[0m&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>区分命令是内部命令还是外部命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> COMMAND	</span><br><span class="line">-a	<span class="comment">#列出所有</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">enable</span>			<span class="comment">#查看bash中所有内置命令</span></span><br><span class="line"><span class="built_in">help</span>			<span class="comment">#查看所有内部命令及帮助</span></span><br><span class="line"><span class="built_in">enable</span>			<span class="comment">#查看所有启用的内部命令</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Hash缓存表</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">hash</span>			<span class="comment">#显示当前终端进程中的hash缓存表</span></span><br><span class="line">-l	<span class="comment">#显示详细信息</span></span><br><span class="line">-t	<span class="comment">#输出路径</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令别名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span>			<span class="comment">#显示shell进程所有可用命令</span></span><br><span class="line"><span class="built_in">alias</span> NAME		<span class="comment">#显示指定别名</span></span><br><span class="line"></span><br><span class="line">查看原命令</span><br><span class="line">\ALIASNAME</span><br><span class="line"><span class="string">&quot;ALIASNAME&quot;</span></span><br><span class="line"><span class="string">&#x27;ALIASNAME&#x27;</span></span><br><span class="line"><span class="built_in">command</span> ALIASNAME</span><br><span class="line">/path/command	<span class="comment">#只适用于外部命令</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令格式</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">COMMAND [OPTIONS...] [ARGUMENTS...]</span><br><span class="line">COMMAND [COMMAND] [COMMAND] ...</span><br><span class="line"></span><br><span class="line">COMMAND		<span class="comment">#命令</span></span><br><span class="line">OPTIONS		<span class="comment">#选项</span></span><br><span class="line">ARGUMENTS	<span class="comment">#参数</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常见命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lscpu				<span class="comment">#查看cpu	</span></span><br><span class="line"><span class="built_in">cat</span> /proc/cpuinfo</span><br><span class="line"></span><br><span class="line">free				<span class="comment">#查看内存大小</span></span><br><span class="line"><span class="built_in">cat</span> /proc/meminfo</span><br><span class="line"></span><br><span class="line">lsblk				<span class="comment">#查看硬盘和分区情况</span></span><br><span class="line"><span class="built_in">cat</span> /proc/partitions</span><br><span class="line"></span><br><span class="line"><span class="built_in">arch</span>				<span class="comment">#查看系统构架</span></span><br><span class="line"><span class="built_in">uname</span> -r			<span class="comment">#查看内核版本</span></span><br><span class="line"><span class="built_in">cat</span> /etc/os-release	<span class="comment">#查看操作系统发行版本</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>日期时间日历</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">date</span>				<span class="comment">#显示时间</span></span><br><span class="line">cal					<span class="comment">#显示日历</span></span><br><span class="line"></span><br><span class="line">设置时区(/etc/localtime)</span><br><span class="line">timedatectl list-timezones</span><br><span class="line">timedatectl set-timezone SHIQU</span><br><span class="line">timedatectl status</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关机重启</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">poweroff	<span class="comment">#关机</span></span><br><span class="line">init 0</span><br><span class="line">shutdown -h now</span><br><span class="line"></span><br><span class="line">reboot		<span class="comment">#重启</span></span><br><span class="line">init 6</span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用户登录信息查看命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">whoami</span>		<span class="comment">#当前登录用户</span></span><br><span class="line"><span class="built_in">who</span>			<span class="comment">#当前所有登录会话</span></span><br><span class="line">w			<span class="comment">#当前所有登录会话及所做操作</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文本编辑</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>会话管理</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">screen</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">yum install screen</span><br><span class="line"></span><br><span class="line">tmux</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">yum install tmux</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出信息echo</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> [-new] [字符串]</span><br><span class="line">-n	<span class="comment">#输出后不换行</span></span><br><span class="line">-e	<span class="comment">#转义字符串</span></span><br><span class="line"></span><br><span class="line">\a	<span class="comment">#发出警告声</span></span><br><span class="line">\n	<span class="comment">#换行</span></span><br><span class="line">\r	<span class="comment">#回车</span></span><br><span class="line">\t	<span class="comment">#插入Tab</span></span><br><span class="line">\\	<span class="comment">#插入 \ 字符</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符集和编码、语言环境</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ASCII码</span><br><span class="line">man ascii			<span class="comment">#查看ascii表</span></span><br><span class="line"></span><br><span class="line">Unicode</span><br><span class="line"></span><br><span class="line">语言环境</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$LANG</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令行扩展</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">命令</span><br><span class="line">$(COMMAND)</span><br><span class="line">`COMMAND`</span><br><span class="line"></span><br><span class="line">变量 </span><br><span class="line"><span class="string">&quot; &quot;</span>  弱引用，可以解析内容</span><br><span class="line"><span class="string">&#x27; &#x27;</span>  强引用，原样输出</span><br><span class="line"></span><br><span class="line">大括号</span><br><span class="line">&#123; &#125;  打印重复字符串</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>tab键补全</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> 2Tab		<span class="comment">#所有子命令或文件补全</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令行历史</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history				</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>登录提示</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">登录前</span><br><span class="line">/etc/issue</span><br><span class="line">/etc/issue.d/</span><br><span class="line"></span><br><span class="line">使用远程终端ssh登录前的提示</span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"><span class="comment">#Banner none    将此处的banner指向对应的文件</span></span><br><span class="line">Banner /etc/issue.net</span><br><span class="line"><span class="comment">#重启sshd 服务</span></span><br><span class="line">service sshd restart</span><br><span class="line"></span><br><span class="line">登录后</span><br><span class="line">/etc/motd</span><br><span class="line">/etc/motd.d/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获得帮助</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">whatis				<span class="comment">#显示命令的简短描述</span></span><br><span class="line">whereis				<span class="comment">#列出命令或系统文件路径</span></span><br><span class="line"><span class="built_in">help</span> COMMAND		<span class="comment">#内部命令帮助</span></span><br><span class="line">COMMAND --<span class="built_in">help</span>|-h	<span class="comment">#外部命令帮助</span></span><br><span class="line">man COMMAND			<span class="comment">#帮助手册</span></span><br><span class="line"></span><br><span class="line">info				<span class="comment">#进入整个info文档</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/15/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" data-id="clmkdj5wp0001isw6bfq9995j" data-title="linux基础命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/09/15/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" data-id="clmke2rn90001nsw62oiv5qc9" data-title="linux基础命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
